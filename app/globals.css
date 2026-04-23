@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Pacifico&display=swap");
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d2b5c;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -14,13 +16,31 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0d2b5c;
+    --foreground: #ffffff;
   }
 }
+
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading{
+  font-size: 100px;
+}
+
+.subtext{
+  font-family: "Comic Relief", cursive;
+  font-size: 24px;
+}
+
+.pacifico{
+  font-family: "Pacifico", cursive;
+}
+
+button:hover{
+  cursor: pointer;
 }
