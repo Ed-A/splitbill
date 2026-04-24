@@ -38,7 +38,14 @@ Perfect for:
 
 ## 📸 Screenshots
 
+## Home Page
 ![Home Page](./screenshots/homepage.png)
+
+## Adding Members
 ![Add Member](./screenshots/AddMember.png)
+
+## Adding Expenses
 ![Add Expense](./screenshots/AddExpense.png)
+
+## Group Page
 ![Group Page](./screenshots/GroupPage.png)
