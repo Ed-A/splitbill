@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💸 SplitBill
 
-## Getting Started
+A work-in-progress, simple and intuitive full-stack web application to split expenses among friends, roommates, or groups — without the confusion or awkward conversations.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+SplitBill helps users track shared expenses and automatically calculates who owes whom. It removes manual math and keeps group spending transparent and fair.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Perfect for:
+- Trips with friends ✈️  
+- Roommate expenses 🏠  
+- Group dinners 🍽️  
+- Any shared spending situation  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+- ➕ Add group expenses easily  
+- 👥 Track multiple participants per expense  
+- ⚖️ Automatic balance calculation  
+- 💰 Shows who owes whom  
+- 📊 Clear and minimal UI  
+- 🔄 Real-time updates (if applicable)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+- **Frontend:** React, TypeScript  
+- **Backend:** Node.js, Express  
+- **Database:** MongoDB  
+- **Styling:** Tailwind CSS / CSS Modules (edit if needed)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📸 Screenshots
+
+Example:
+```md
+![Home Page](./screenshots/homepage.png)
+![Add Member](./screenshots/AddMember.png)
+![Add Expense](./screenshots/AddExpense.png)
+![Group Page](./screenshots/GroupPage.png)
