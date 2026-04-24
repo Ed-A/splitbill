@@ -38,8 +38,6 @@ Perfect for:
 
 ## 📸 Screenshots
 
-Example:
-```md
 ![Home Page](./screenshots/homepage.png)
 ![Add Member](./screenshots/AddMember.png)
 ![Add Expense](./screenshots/AddExpense.png)
