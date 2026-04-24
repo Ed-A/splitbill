@@ -21,18 +21,18 @@ Perfect for:
 - ➕ Add group expenses easily  
 - 👥 Track multiple participants per expense  
 - ⚖️ Automatic balance calculation  
-- 💰 Shows who owes whom  
+- 💰 Shows who owes how much to the pot, and who takes how much from it
 - 📊 Clear and minimal UI  
-- 🔄 Real-time updates (if applicable)
+- 🔄 Real-time updates
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **Frontend:** React, TypeScript  
-- **Backend:** Node.js, Express  
+- **Backend:** Node.js, NEXT.js
 - **Database:** MongoDB  
-- **Styling:** Tailwind CSS / CSS Modules (edit if needed)
+- **Styling:** Tailwind CSS 
 
 ---
 
