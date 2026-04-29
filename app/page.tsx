@@ -70,7 +70,15 @@ export default function Home() {
       try {
         const res = await fetch("/api/groups");
         const data = await res.json();
-        setGroups(data);
+
+        if (!res.ok) {
+          console.error(data.error);
+          setGroups([]);
+          return;
+        }
+
+        setGroups(data.groups ?? []);
+
       } catch (error) {
         console.error("Failed to fetch groups", error);
       } finally {
@@ -127,7 +135,6 @@ export default function Home() {
             <ul>
               {
               groups?.map((group) => (
-                console.log(group),
                 <li key={group._id?.toString()} className="border-2 border-gray-500 bg-white rounded-xl p-2 mb-2 flex justify-between hover:cursor-pointer hover:text-red-400"><span className="text-2xl w-full" onClick={() => handleListClick(group.name, `${group._id}`)}>{group.name}</span>
                 <button className="text-red-500 hover:underline hover:cursor-pointer" onClick={() => (confirmDelete? handleDelete(group._id?.toString() || "") : setConfirmDelete(true))}>
                   <svg xmlns="http://www.w3.org/2000/svg" fill={confirmDelete? "red" : "none"} viewBox="0 0 24 24" strokeWidth={1.5} stroke={confirmDelete? "white" : "currentColor"} className="size-6">

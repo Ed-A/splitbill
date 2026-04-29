@@ -43,7 +43,7 @@ export async function GET() {
       .find({})
       .toArray();
 
-    return NextResponse.json(groups);
+    return NextResponse.json({ groups });
   } catch (error) {
     console.error("GET /api/groups error:", error);
     return NextResponse.json(
