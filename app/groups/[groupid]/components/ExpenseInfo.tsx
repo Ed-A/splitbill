@@ -13,6 +13,26 @@ return (
             <h3>Date: {new Date(expense?.date).toLocaleString()}</h3> 
             <h3>Paid By: {members.find((m) => m._id === expense?.paidBy)?.name}</h3>
             <h3>Participants: {expense?.participants?.map((id) => members.find((m) => m._id === id)?.name).join(", ")}</h3> 
+            <button className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" onClick={async () => {
+                if (confirm("Are you sure you want to delete this expense?")) {
+                    try {
+                        const response = await fetch(`/api/expenses/${expense._id}`, {
+                            method: "DELETE"
+                        });
+
+                        if (!response.ok) {
+                            throw new Error("Failed to delete expense");
+                        }
+
+                        setRefreshKey((prev) => prev + 1);
+                        setShown(false);
+                    } catch (error) {
+                        console.error("Error deleting expense:", error);
+                    }
+                }
+            }}>
+                Delete Expense
+            </button>
         </div>
     )
 };
