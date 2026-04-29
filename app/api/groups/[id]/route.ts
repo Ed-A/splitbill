@@ -4,13 +4,13 @@ import { use } from "react";
 import { ok } from "assert";
 
 export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const client = await clientPromise;
     const db = client.db("expense_splitter");
-    const { id } = await params;  
+    const { id } = await context.params;
 
     const { ObjectId } = await import("mongodb");
     const group = await db
@@ -35,13 +35,13 @@ export async function GET(
 }
 
 export async function PUT(
-  request: Request,
-  { params }: { params: { id: string } }
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const client = await clientPromise;
     const db = client.db("expense_splitter");
-    const { id } = await params;
+    const { id } = await context.params;
     const body = await request.json();
 
     const { ObjectId } = await import("mongodb");
