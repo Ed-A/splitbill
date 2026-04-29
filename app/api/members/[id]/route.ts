@@ -31,13 +31,13 @@ export async function PUT(req: Request, { params }: { params: { id: string}}) {
 }
 
 export async function DELETE(
-  req: Request, 
-  { params }: { params: { id: string}}
+  req: NextRequest, 
+  context: { params: Promise<{ id: string}>}
 ) {
   try {
     const client = await clientPromise;
     const db = client.db("expense_splitter");
-    const { id } = params;
+    const { id } = await context.params;
 
     const { ObjectId } = await import("mongodb");
 
