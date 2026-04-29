@@ -2,15 +2,17 @@ import { NextRequest, NextResponse } from "next/server";
 import clientPromise from "@/lib/mongodb";
 
 export async function DELETE(
-  request: NextRequest,
+  req: NextRequest,
   context: { params: Promise<{ id: string }> }
 ) {
   try {
     const client = await clientPromise;
     const db = client.db("expense_splitter");
+
     const { id } = await context.params;
 
     const { ObjectId } = await import("mongodb");
+
     const result = await db
       .collection("expenses")
       .deleteOne({ _id: new ObjectId(id) });
@@ -22,9 +24,14 @@ export async function DELETE(
       );
     }
 
-    return NextResponse.json({ message: "Expense deleted successfully" }, {status: 200});
+    return NextResponse.json(
+      { message: "Expense deleted successfully" },
+      { status: 200 }
+    );
+
   } catch (error) {
-    console.error("DELETE /api/expenses/[id] error:", error);
+    console.error("DELETE error:", error);
+
     return NextResponse.json(
       { error: "Failed to delete expense" },
       { status: 500 }
