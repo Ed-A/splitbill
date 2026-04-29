@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
 
-export async function PUT(req: Request, { params }: { params: { id: string}}) {
+export async function PUT(req: NextRequest, context: { params: Promise<{ id: string }> }) {
 
   try {
     const client = await clientPromise;
     const db = client.db("expense_splitter");
-    const { id } = await params;
+    const { id } = await context.params;
     const body = await req.json();
 
     const { ObjectId } = await import("mongodb");
