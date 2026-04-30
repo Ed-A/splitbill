@@ -79,16 +79,16 @@ useEffect(() => {
   fetchMembers();
 }, [refreshKey]);
 
-return <div className="px-8 w-full py-3">
+return <div className=" w-full my-14">
   <Link href="/" className="absolute top-2 left-2">
         <button className="mb-4 text-4xl hover:cursor-pointer">🏠</button>
     </Link>
-  <h1 className=" text-7xl text-center">
+  <h1 className=" max-[550px]:text-[12vw] min-[550px]:text-7xl text-center">
     
     {group?.name}
   </h1>
-  <div className="flex flex-row w-full mt-8">
-    <div className="expense-div w-[65%] p-4">
+  <div className="flex flex-row max-[880px]:flex-col w-full mt-8">
+    <div className="expense-div min-[880px]:w-[65%] w-full p-4">
       <span className="flex gap-8 items-center border-b border-gray-300 pb-2 mb-4 pl-4 text-2xl">
         <h1>Expenses</h1>
         <button className="border-0.5 border-black rounded-4xl w-10 h-10 bg-[#2f8f74] text-white hover:text-white hover:bg-[#25735e] hover:cursor-pointer" onClick={() => setShowExpenseForm(prev => !prev)}>+</button>
@@ -117,13 +117,13 @@ return <div className="px-8 w-full py-3">
         <ExpenseForm groupid={groupid} setRefreshKey={setRefreshKey} showExpenseForm={showExpenseForm} setShowExpenseForm={setShowExpenseForm} members={members} />
         <ExpenseInfo expense={expense!} members={members} shown={showExpenseInfo} setShown={setShowExpenseInfo} refreshKey={refreshKey} setRefreshKey={setRefreshKey} />
       </div>
-      <div className="members-div w-[40%] p-4">
+      <div className="members-div min-[880px]:w-[40%] w-full p-4">
         <span className="flex gap-4 items-center border-b border-gray-300 pb-2 mb-4 text-2xl">
           <button className="border-2 border-gray-400 rounded-xl w-10 h-10
            bg-gray-300 text-gray-700 hover:cursor-pointer hover:text-white hover:bg-amber-400" onClick={() => setShowMemberForm(prev => !prev)}>+</button>
           <h1>Members</h1>
         </span>
-        <div className={`p-4 text-black bg-blue-300 rounded-lg z-10 absolute w-[80%] m-auto left-0 right-0 ${showMemberForm ? "block" : "hidden"}`}>
+        <div className={`p-4 text-black bg-blue-300 rounded-lg z-10 absolute -translate-x-1/2 -translate-y-1/2 top-[50%] left-[50%] w-[80%] m-auto ${showMemberForm ? "block" : "hidden"}`}>
           <form onSubmit={async (e) => {
             e.preventDefault();
             const formData = new FormData(e.currentTarget);
@@ -152,17 +152,17 @@ return <div className="px-8 w-full py-3">
             <h1 className="text-3xl m-auto w-max font-serif text-black">Add Member</h1>
             
             <div className="flex flex-row justify-evenly m-auto w-full my-8">   
-              <img src="/assets/avatar1.jpg" className={`w-36 h-36 rounded-full ${avatar === '1' ? 'ring-2 ring-blue-500' : ''} peer-checked:ring-2 peer-checked:ring-blue-500 hover:border p-2`} onClick={() => {
+              <img src="/assets/avatar1.jpg" className={`w-36 h-36 max-[580px]:w-24 max-[580px]:h-24 rounded-full ${avatar === '1' ? 'ring-2 ring-blue-500' : ''} peer-checked:ring-2 peer-checked:ring-blue-500 hover:border p-2`} onClick={() => {
                   setAvatar('1');
                   const radio = document.getElementById("avatar1") as HTMLInputElement;
                   radio.checked = true;
               }} />
-              <img src="/assets/avatar2.jpg" className={`w-36 h-36 rounded-full ${avatar === '2' ? 'ring-2 ring-blue-500' : ''} peer-checked:ring-2 peer-checked:ring-blue-500 hover:border p-2`} onClick={() => {
+              <img src="/assets/avatar2.jpg" className={`w-36 h-36 max-[580px]:w-24 max-[580px]:h-24 rounded-full ${avatar === '2' ? 'ring-2 ring-blue-500' : ''} peer-checked:ring-2 peer-checked:ring-blue-500 hover:border p-2`} onClick={() => {
                   setAvatar('2');
                   const radio = document.getElementById("avatar2") as HTMLInputElement;
                   radio.checked = true;
               }} />
-              <img src="/assets/avatar3.jpg" className={`w-36 h-36 rounded-full ${avatar === '3' ? 'ring-2 ring-blue-500' : ''} peer-checked:ring-2 peer-checked:ring-blue-500 hover:border p-2`} onClick={() => {
+              <img src="/assets/avatar3.jpg" className={`w-36 h-36 max-[580px]:w-24 max-[580px]:h-24 rounded-full ${avatar === '3' ? 'ring-2 ring-blue-500' : ''} peer-checked:ring-2 peer-checked:ring-blue-500 hover:border p-2`} onClick={() => {
                   setAvatar('3');
                   const radio = document.getElementById("avatar3") as HTMLInputElement;
                   radio.checked = true;

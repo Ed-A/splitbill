@@ -110,8 +110,8 @@ export default function Home() {
           required
         />
 
-        <button type="submit" className= "flex-3 bg-green-700 p-4.5 w-max h-auto rounded text-gray-200" disabled={creating}>
-          <span className="inline max-[450px]:inline min-[451px]:hidden">
+        <button type="submit" className= "flex-3 max-[450px]:flex-1 max-[450px]:p-2 bg-green-700 p-4.5 w-max h-auto rounded text-gray-200" disabled={creating}>
+          <span className="inline max-[450px]:inline max-[450px]:text-3xl min-[451px]:hidden">
             +
           </span>
           <span className="hidden min-[451px]:inline sm:hidden">
@@ -127,7 +127,7 @@ export default function Home() {
       </div>
       <div className="bg-gray-200 rounded-b-lg shadow-md px-6 py-4">
         <h2 className="text-2xl font-semibold font-inter">Your Groups</h2>
-            <div style={{ padding: 20}}>
+            <div className="p-2">
 
           {groups.length === 0 ? (
             <p>No groups yet</p>

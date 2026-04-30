@@ -31,7 +31,7 @@ export default function MemberInfo({ member, expenses, shown, setShown, refreshK
     }
 
 return (
-        <div className={`absolute -translate-x-1/2 -translate-y-1/2 top-[50%] left-[50%] w-[80vh] p-6 text-black bg-blue-300 rounded-lg m-auto ${shown ? "block" : "hidden"}`}>
+        <div className={`absolute -translate-x-1/2 -translate-y-1/2 top-[50%] left-[50%] w-[80vw] p-6 text-black bg-blue-300 rounded-lg m-auto ${shown ? "block" : "hidden"}`}>
             <div className="flex justify-between">
                 <h2 className="text-2xl font-semibold mb-4">Member Information</h2>
                 <button className="hover:cursor-pointer" onClick={() => setShown(false)}>❌</button>
